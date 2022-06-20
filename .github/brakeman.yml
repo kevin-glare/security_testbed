@@ -1,0 +1,9 @@
+name: brakeman
+on:
+  - push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: brakeman
+        run: bundle exec brakeman -7 -A -z -q --ensure-latest
