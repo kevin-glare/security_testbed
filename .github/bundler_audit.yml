@@ -1,0 +1,9 @@
+name: bundler-audit
+on:
+  - push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: bundler-audit
+        run: bundle exec bundler-audit update && bundler-audit
