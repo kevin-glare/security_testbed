@@ -1,11 +1,22 @@
-name: brakeman
+name: Brakeman Scan
 on:
   - push
 jobs:
-  build:
+  brakeman-scan:
+    name: Brakeman Scan
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
       - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@v1
-      - name: brakeman
-        run: bundle exec brakeman -7 -A -z -q --ensure-latest
+
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '3.0.1'
+
+      - name: Setup Brakeman
+        run: gem isntall brakeman
+
+      - name: Brakeman Run
+          continue-on-error: true
+          run: bundle exec brakeman -7 -A -z -q --ensure-latest

@@ -1,11 +1,22 @@
-name: bundler-audit
+name: BundlerAudit Scan
 on:
   - push
 jobs:
-  build:
+  bundler-audit-scan:
+    name: BundlerAudit Scan
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
       - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@v1
-      - name: bundler-audit
-        run: bundle exec bundler-audit update && bundler-audit
+
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '3.0.1'
+
+      - name: Setup BundlerAudit
+        run: gem isntall bundler-audit
+
+      - name: BundlerAudit Run
+          continue-on-error: true
+          run: bundler-audit update && bundler-audit
