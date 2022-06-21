@@ -28,8 +28,6 @@ jobs:
 
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
-        with:
-          ruby-version: '3.0.1'
 
       - name: Setup BundlerAudit
         run: gem install bundler-audit
