@@ -11,13 +11,13 @@ jobs:
 
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
-        with:
-          ruby-version: '3.0.1'
-          bundler-cache: true
+
+      - name: Setup Brakeman
+        run: gem install brakeman
 
       - name: Brakeman Run
         continue-on-error: true
-        run: bundle exec brakeman -7 -A -z -q --ensure-latest
+        run: brakeman -7 -A -z -q --ensure-latest
 
   bundler-audit-scan:
     name: BundlerAudit Scan
@@ -27,11 +27,11 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.0.1'
-          bundler-cache: true
+        uses: actions/setup-ruby@v1
+
+      - name: Setup BundlerAudit
+        run: gem install bundler-audit
 
       - name: BundlerAudit Run
         continue-on-error: true
-        run: bundle exec bundler-audit check --update
+        run: bundler-audit update && bundler-audit
