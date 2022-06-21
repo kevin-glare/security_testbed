@@ -6,5 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
       - name: bundler-audit
         run: bundle exec bundler-audit update && bundler-audit
