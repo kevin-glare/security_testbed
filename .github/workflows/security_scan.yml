@@ -34,4 +34,4 @@ jobs:
 
       - name: BundlerAudit Run
         continue-on-error: true
-        run: bundler-audit update && bundler-audit
+        run: bundler-audit check --update
