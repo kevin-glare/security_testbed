@@ -12,9 +12,6 @@ jobs:
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
 
-      - name: Setup Brakeman
-        run: gem install brakeman
-
       - name: Brakeman Run
         continue-on-error: true
         run: brakeman -7 -A -z -q --ensure-latest

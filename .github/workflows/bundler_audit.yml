@@ -12,9 +12,6 @@ jobs:
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
 
-      - name: Setup BundlerAudit
-        run: gem install bundler-audit
-
       - name: BundlerAudit Run
         continue-on-error: true
-        run: bundler-audit update && bundler-audit
+        run: bundle-audit check --update
