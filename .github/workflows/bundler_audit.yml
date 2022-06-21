@@ -14,4 +14,4 @@ jobs:
 
       - name: BundlerAudit Run
         continue-on-error: true
-        run: bundle-audit check --update
+        run: bundle exec bundler-audit check --update

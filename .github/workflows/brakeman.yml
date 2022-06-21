@@ -14,4 +14,4 @@ jobs:
 
       - name: Brakeman Run
         continue-on-error: true
-        run: brakeman -7 -A -z -q --ensure-latest
+        run: bundle exec brakeman -7 -A -z -q --ensure-latest
