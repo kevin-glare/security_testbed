@@ -11,6 +11,9 @@ jobs:
 
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '3.0.1'
+          bundler-cache: true
 
       - name: Brakeman Run
         continue-on-error: true
@@ -26,6 +29,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
+          ruby-version: '3.0.1'
           bundler-cache: true
 
       - name: BundlerAudit Run
