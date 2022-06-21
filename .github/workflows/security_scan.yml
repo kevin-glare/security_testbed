@@ -18,8 +18,8 @@ jobs:
         run: gem isntall brakeman
 
       - name: Brakeman Run
-          continue-on-error: true
-          run: bundle exec brakeman -7 -A -z -q --ensure-latest
+        continue-on-error: true
+        run: bundle exec brakeman -7 -A -z -q --ensure-latest
 
   bundler-audit-scan:
     name: BundlerAudit Scan
@@ -37,5 +37,5 @@ jobs:
         run: gem isntall bundler-audit
 
       - name: BundlerAudit Run
-          continue-on-error: true
-          run: bundler-audit update && bundler-audit
+        continue-on-error: true
+        run: bundler-audit update && bundler-audit
