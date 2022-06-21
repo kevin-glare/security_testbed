@@ -15,7 +15,7 @@ jobs:
           ruby-version: '3.0.1'
 
       - name: Setup BundlerAudit
-        run: gem isntall bundler-audit
+        run: gem install bundler-audit
 
       - name: BundlerAudit Run
         continue-on-error: true

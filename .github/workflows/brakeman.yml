@@ -15,7 +15,7 @@ jobs:
           ruby-version: '3.0.1'
 
       - name: Setup Brakeman
-        run: gem isntall brakeman
+        run: gem install brakeman
 
       - name: Brakeman Run
         continue-on-error: true
