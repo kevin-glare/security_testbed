@@ -8,7 +8,7 @@
   <% @posts.each do |post| %>
     <%= render post %>
     <p>
-      <%= sanitize link_to "Show this post", post %>
+      <%= link_to "Show this post", post %>
     </p>
   <% end %>
 </div>
