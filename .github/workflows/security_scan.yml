@@ -1,6 +1,5 @@
 name: Security scan
-on:
-  - push
+
 jobs:
   brakeman-scan:
     name: Brakeman Scan
