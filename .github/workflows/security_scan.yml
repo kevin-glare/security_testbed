@@ -1,6 +1,5 @@
-name: Security scan
-on:
-  - workflow_dispatch
+name: Security scan 2
+on: [workflow_dispatch]
 jobs:
   brakeman-scan:
     name: Brakeman Scan
